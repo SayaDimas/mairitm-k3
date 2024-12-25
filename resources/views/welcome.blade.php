@@ -21,24 +21,11 @@
         </style>
     </head>
     <body class="antialiased">
-        {{-- <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white"> --}}
-            {{-- @if (Route::has('login'))
-                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
-                    @auth
-                        <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif --}}
 
             <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
                 <div class="container px-4 px-lg-5">
-                    <a class="navbar-brand" href="#page-top">Maritim-k3</a>
+                    <a class="navbar-brand" href="#page-top">SafeSea</a>
                     <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         Menu
                         <i class="fas fa-bars"></i>
@@ -65,9 +52,9 @@
                 <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
                     <div class="d-flex justify-content-center">
                         <div class="text-center">
-                            <h1 class="mx-auto my-0 text-uppercase">K3 Maritim Education</h1>
-                            <h2 class="text-white-50 mx-auto mt-2 mb-5">NIOSH's Center for Maritime Safety and Health Studies </h2>
-                            <a class="btn btn-primary" href="#about">Get Started</a>
+                            <h1 class="mx-auto my-0 ">SafeSea</h1>
+                            <h2 class="text-white-50 mx-auto mt-2 mb-5"> Tenang Berlayar, Aman Bersandar </h2>
+                            <a class="btn btn-primary" href="#about">Lihat Lebih Dekat</a>
                         </div>
                     </div>
                 </div>
@@ -80,7 +67,7 @@
                             <h2 class="text-white mb-4">About</h2>
                             <div class="row gx-4 gx-lg-5 justify-content-center">
                             <p class="text-white" >
-                                NIOSH's Center for Maritime Safety and Health Studies promotes safety and health for all maritime workers, including those working on ships, at waterfront facilities, and on land that directly support maritime operations. The center serves as a collaborative center for NIOSH and external researchers, while developing research partnerships.
+                                SafeSea hadir dengan tujuan mulia untuk memberikan informasi yang komprehensif dan edukatif tentang keamanan di laut. Kami percaya bahwa dengan pemahaman yang lebih baik tentang langkah-langkah keselamatan, para pembaca dapat mengurangi rasa takut dan kekhawatiran saat bekerja atau bepergian melalui jalur laut. Melalui panduan, tips, dan informasi terkini, SafeSea berkomitmen untuk menjadi sumber terpercaya yang membantu setiap individu merasa lebih percaya diri dan aman di tengah samudera
                             </p>
 
                             </div>
