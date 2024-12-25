@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->foreignId('teacher_id')->constrained('users')->onDelete('cascade'); // Menyimpan ID guru yang membuat
+            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade'); // Menyimpan ID kategori yang dipilih
             $table->timestamps();
         });
     }
