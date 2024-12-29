@@ -2,16 +2,16 @@
 
 @push('styles')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"> <!-- AOS CSS -->
     <style>
         /* Hero Banner */
         .hero-banner {
-            background: linear-gradient(to bottom, #6a11cb, #2575fc);
+            background: linear-gradient(to bottom, #025fff, #25c3fc), url("{{ asset('img/uderwater.png') }}");
             color: white;
             text-align: center;
             padding: 50px 0;
             border-radius: 10px;
         }
-
         /* Title Kategori */
         .category-title {
             margin-bottom: 30px;
@@ -68,25 +68,24 @@
 
 @section('content')
     <!-- Hero Banner -->
-    <div class="hero-banner">
-        <div class="container">
+    <div class="hero-banner" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container text-center">
             <h1>Halo, {{ $username }}!</h1>
-            <p>Temukan berbagai modul dan kategori pembelajaran yang menarik.</p>
+            <p>Selamat datang di platform pembelajaran kami! Temukan berbagai modul dan materi yang akan membantu Anda dalam mengetahui cara bertahan hidup. you happy i am happy, i am happy everybody will be happy!</p>
         </div>
     </div>
 
     <!-- Kontainer Modul -->
     <div class="container mt-5">
         @foreach ($categories as $category)
-            <div class="category-container">
+            <div class="category-container" data-aos="fade-up" data-aos-duration="1000">
                 <!-- Nama Kategori -->
                 <h2 class="category-title">{{ $category->name }}</h2>
 
                 <div class="row">
                     @foreach ($category->modules->take(3) as $module)
-                        <div class="col-md-4">
+                        <div class="col-md-4" data-aos="zoom-in" data-aos-duration="1000">
                             <div class="card module-card">
-                                <img src="{{ asset($module->image) }}" class="card-img-top" alt="{{ $module->title }}">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $module->title }}</h5>
                                     <p class="card-text">{{ $module->description }}</p>
@@ -113,5 +112,12 @@
 @endsection
 
 @push('scripts')
-    <!-- Tambahkan script jika dibutuhkan -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script> <!-- AOS JS -->
+    <script>
+        // Inisialisasi AOS
+        AOS.init({
+            duration: 1000, // Durasi animasi dalam ms
+            once: true, // Animasi hanya terjadi sekali saat scroll
+        });
+    </script>
 @endpush
