@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    SafeSea
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -98,7 +98,7 @@
                                 <i class="fs-4 bi-journal"></i> <span class="ms-1 d-none d-sm-inline">Tambah Modules</span>
                             </button>
                         @elseif (Auth::user()->role === 'siswa')
-                            <button class="btn btn-dark w-100 text-start mb-2" onclick="location.href='/siswa/dashboard'">
+                            <button class="btn btn-dark w-100 text-start mb-2" onclick="location.href='{{ route('siswa.dashboard') }}'">
                                 <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Student Dashboard</span>
                             </button>
                             <button class="btn btn-dark w-100 text-start mb-2" onclick="location.href='/siswa/courses'">

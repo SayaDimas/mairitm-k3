@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\CategoryController;
+use App\Models\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,7 +60,8 @@ Route::middleware(['auth', 'role:guru'])->group(function () {
 });
 
 Route::middleware(['auth', 'role:siswa'])->group(function () {
-    Route::get('/siswa', function () {
-        return view('siswa.dashboard');
-    });
+    Route::get('/siswa', [SiswaController::class, 'dashboard'])->name('siswa.dashboard');
+    Route::get('/home', [SiswaController::class, 'dashboard'])->name('siswa.dashboard');
+    Route::get('/siswa/kategori/{id}', [CategoryController::class, 'show'])->name('kategori.show');
+    Route::get('materi/{module_id}/{materi_id}', [SiswaController::class, 'show'])->name('materi.show');
 });
