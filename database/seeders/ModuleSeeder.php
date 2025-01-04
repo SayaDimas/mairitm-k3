@@ -29,19 +29,25 @@ class ModuleSeeder extends Seeder
         // Buat data modul
         $modules = [
             [
-                'title' => 'Panduan Keselamatan',
+                'title' => 'Keselamatan di Laut',
                 'description' => 'Tips penting untuk menjaga keselamatan selama berlayar atau bekerja di laut.',
                 'teacher_id' => "2",
                 'category_id' => $categories->random()->id,
             ],
             [
-                'title' => 'Prakiraan Cuaca Laut',
+                'title' => 'Perawatan dan Pemeliharaan Kapal',
                 'description' => 'Informasi cuaca dan kondisi laut untuk membantu perencanaan perjalanan atau aktivitas maritim.',
                 'teacher_id' => "2",
                 'category_id' => $categories->random()->id,
             ],
             [
                 'title' => 'Perangkat dan Teknologi Keselamatan:',
+                'description' => 'Review tentang teknologi terbaru yang dapat membantu keselamatan di laut, seperti sistem pelacak atau perangkat komunikasi.',
+                'teacher_id' => "2",
+                'category_id' => $categories->random()->id,
+            ],
+            [
+                'title' => 'Pertolongan Pertama di Laut',
                 'description' => 'Review tentang teknologi terbaru yang dapat membantu keselamatan di laut, seperti sistem pelacak atau perangkat komunikasi.',
                 'teacher_id' => "2",
                 'category_id' => $categories->random()->id,

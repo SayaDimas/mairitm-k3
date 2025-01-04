@@ -103,50 +103,51 @@ class GuruController extends Controller
     }
 
     public function storeMateri(Request $request, $moduleId)
-    {
-        // Validasi input materi
-        $request->validate([
-            'materi.*.title' => 'required|string|max:255',
-            'materi.*.content' => 'nullable|string',
-            'materi.*.image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10240', // Maksimum 10MB untuk gambar
-            'materi.*.video' => 'nullable|mimes:mp4,avi,mkv|max:10240', // Maksimum 10MB untuk video
-        ]);
+{
+    // Validasi input materi
+    $request->validate([
+        'materi.*.title' => 'required|string|max:255',
+        'materi.*.content' => 'nullable|string',
+        'materi.*.image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10240', // Maksimum 10MB untuk gambar
+        'materi.*.video' => 'nullable|mimes:mp4,avi,mkv|max:51200', // Maksimum 50MB untuk video
+    ]);
 
-        $module = Module::findOrFail($moduleId);
+    $module = Module::findOrFail($moduleId);
 
-        // Iterasi dan simpan materi
-        foreach ($request->input('materi') as $index => $materiData) {
-            try {
-                $materi = new Materi();
-                $materi->module_id = $module->id;
-                $materi->title = $materiData['title'];
-                $materi->content = $materiData['content'] ?? '';
+    // Iterasi dan simpan materi
+    foreach ($request->input('materi') as $index => $materiData) {
+        try {
+            $materi = new Materi();
+            $materi->module_id = $module->id;
+            $materi->title = $materiData['title'];
+            $materi->content = $materiData['content'] ?? '';
 
-                // Proses upload gambar
-                if ($request->hasFile("materi.$index.image")) {
-                    $imageFile = $request->file("materi.$index.image");
-                    $imagePath = $imageFile->store('materi_images', 'public');
-                    $materi->image = $imagePath;
-                }
-
-                // Proses upload video
-                if ($request->hasFile("materi.$index.video")) {
-                    $videoFile = $request->file("materi.$index.video");
-                    $videoPath = $videoFile->store('materi_videos', 'public');
-                    $materi->video = $videoPath;
-                }
-
-                // Simpan materi
-                $materi->save();
-            } catch (\Exception $e) {
-                // Tangani error
-                session()->flash('error', 'Terjadi kesalahan pada materi "' . ($materiData['title'] ?? 'Tanpa Judul') . '": ' . $e->getMessage());
-                return redirect()->back();
+            // Proses upload gambar
+            if ($request->hasFile("materi.$index.image")) {
+                $imageFile = $request->file("materi.$index.image");
+                $imagePath = $imageFile->store('materi_images', 'public');
+                $materi->image = $imagePath;
             }
-        }
 
-        return redirect()->route('guru.modules.add_materi', $module->id)->with('success', 'Materi berhasil ditambahkan');
+            // Proses upload video
+            if ($request->hasFile("materi.$index.video")) {
+                $videoFile = $request->file("materi.$index.video");
+                $videoPath = $videoFile->store('materi_videos', 'public');
+                $materi->video = $videoPath;
+            }
+
+            // Simpan materi
+            $materi->save();
+        } catch (\Exception $e) {
+            // Tangani error
+            session()->flash('error', 'Terjadi kesalahan pada materi "' . ($materiData['title'] ?? 'Tanpa Judul') . '": ' . $e->getMessage());
+            return redirect()->back();
+        }
     }
+
+    return redirect()->route('guru.modules.add_materi', $module->id)->with('success', 'Materi berhasil ditambahkan');
+}
+
 
     public function destroy($id)
     {

@@ -16,8 +16,8 @@ class CategorySeeder extends Seeder
         $categories = [
             ['name' => 'Keselamatan di Laut'],
             ['name' => 'Kondisi Laut dan Cuaca'],
-            ['name' => 'Teknologi dan Inovasi Maritim'],
-            ['name' => 'Edukasi dan Pelatihan'],
+            ['name' => 'Pertolongan Pertama di Laut'],
+            ['name' => 'Ship Maintenance'],
         ];
 
         // Insert data ke tabel categories
