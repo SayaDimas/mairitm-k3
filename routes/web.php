@@ -38,6 +38,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
 
 Route::middleware(['auth', 'role:guru'])->group(function () {
+    Route::get('/home', [GuruController::class, 'dashboard'])->name('guru.dashboard');
     Route::get('/guru', [GuruController::class, 'dashboard'])->name('guru.dashboard');
     Route::post('/guru/add-student', [GuruController::class, 'addStudent'])->name('guru.addStudent');
     Route::put('/guru/edit-student/{id}', [GuruController::class, 'editStudent'])->name('guru.editStudent');

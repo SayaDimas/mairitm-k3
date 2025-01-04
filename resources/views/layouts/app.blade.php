@@ -97,13 +97,6 @@
                             <button class="btn btn-dark w-100 text-start mb-2" onclick="location.href='{{ route('guru.modules.create') }}'">
                                 <i class="fs-4 bi-journal"></i> <span class="ms-1 d-none d-sm-inline">Tambah Modules</span>
                             </button>
-                        @elseif (Auth::user()->role === 'siswa')
-                            <button class="btn btn-dark w-100 text-start mb-2" onclick="location.href='{{ route('siswa.dashboard') }}'">
-                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Student Dashboard</span>
-                            </button>
-                            <button class="btn btn-dark w-100 text-start mb-2" onclick="location.href='/siswa/courses'">
-                                <i class="fs-4 bi-book"></i> <span class="ms-1 d-none d-sm-inline">My Courses</span>
-                            </button>
                         @else
                             <button class="btn btn-dark w-100 text-start mb-2" onclick="location.href='/dashboard'">
                                 <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>

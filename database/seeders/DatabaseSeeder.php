@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class, // Pastikan UsersSeeder ada
             CategorySeeder::class,
             ModuleSeeder::class,
+            MateriSeeder::class,
         ]);
     }
 }
