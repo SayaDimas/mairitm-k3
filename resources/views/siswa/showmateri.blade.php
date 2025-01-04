@@ -73,60 +73,51 @@
         }
     @endphp
 
-@foreach ($mergedMateris as $materi)
-<div class="materi-container" data-aos="fade-up">
-    <!-- Judul Materi -->
-    <h1 class="materi-title" data-aos="fade-down">{{ $materi['title'] ?? $materi->title }}</h1>
+    @foreach ($mergedMateris as $materi)
+    <div class="materi-container" data-aos="fade-up">
+        <!-- Judul Materi -->
+        <h1 class="materi-title" data-aos="fade-down">{{ $materi['title'] ?? $materi->title }}</h1>
 
-    <!-- Konten Materi -->
-    @if (isset($materi['content']))
-        <div class="materi-content" data-aos="fade-up">
-            @php
-                $paragraphs = explode("\n", $materi['content']);
-            @endphp
-            @foreach ($paragraphs as $paragraph)
-                @if (trim($paragraph) !== '')
-                    <p>{{ $paragraph }}</p>
-                @endif
-            @endforeach
-        </div>
-    @elseif (isset($materi->content))
-        <div class="materi-content" data-aos="fade-up">
-            @php
-                $paragraphs = explode("\n", $materi->content);
-            @endphp
-            @foreach ($paragraphs as $paragraph)
-                @if (trim($paragraph) !== '')
-                    <p>{{ $paragraph }}</p>
-                @endif
-            @endforeach
-        </div>
-    @endif
+        <!-- Konten Materi -->
+        @if (isset($materi['content']) || isset($materi->content))
+            <div class="materi-content" data-aos="fade-up">
+                @php
+                    $content = isset($materi['content']) ? $materi['content'] : $materi->content;
+                    $paragraphs = explode("\n", $content);
+                @endphp
+                @foreach ($paragraphs as $paragraph)
+                    @if (trim($paragraph) !== '')
+                        <p>{{ $paragraph }}</p>
+                    @endif
+                @endforeach
+            </div>
+        @endif
 
-    <!-- Gambar (jika ada) -->
-    @if (isset($materi['image']) || $materi->image)
+        <!-- Gambar (jika ada) -->
+        @if (isset($materi['image']) || isset($materi->image))
+            <div class="text-center" data-aos="zoom-in">
+                <img
+                    src="{{ asset('storage/' . ($materi['image'] ?? $materi->image)) }}"
+                    alt="{{ $materi['title'] ?? $materi->title }}"
+                    class="materi-image">
+                <p class="image-caption">{{ $materi['image_caption'] ?? '' }}</p>
+            </div>
+        @endif
+
+        <!-- Video (jika ada) -->
+        @if (isset($materi['video']) || isset($materi->video))
         <div class="text-center" data-aos="zoom-in">
-            <img
-                src="{{ asset('storage/' . ($materi['image'] ?? $materi->image)) }}"
-                alt="{{ $materi['title'] ?? $materi->title }}"
-                class="materi-image">
-            <p class="image-caption">{{ $materi['image_caption'] ?? '' }}</p>
+            <video controls preload="metadata" class="materi-video" width="640" height="360">
+                <source src="{{ asset('storage/' . ($materi['video'] ?? $materi->video)) }}" type="video/mp4">
+                Browser Anda tidak mendukung tag video.
+            </video>
+            <p class="video-caption">{{ $materi['video_caption'] ?? '' }}</p>
         </div>
-    @endif
+        @endif
 
-    <!-- Video (jika ada) -->
-    @if (isset($materi['video']) || $materi->video)
-    <div class="text-center" data-aos="zoom-in">
-        <video controls preload="metadata" class="materi-video" width="640" height="360">
-            <source src="{{ asset('storage/' . ($materi['video'] ?? $materi->video)) }}" type="video/mp4">
-            Browser Anda tidak mendukung tag video.
-        </video>
-        <p class="video-caption">{{ $materi['video_caption'] ?? '' }}</p>
     </div>
-    @endif
+    @endforeach
 
-</div>
-@endforeach
 
 </div>
 @endsection

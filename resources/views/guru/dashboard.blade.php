@@ -34,12 +34,7 @@
                     <td>{{ $student->name }}</td>
                     <td>{{ $student->email }}</td>
                     <td>
-                        <!-- Edit Siswa -->
-                        <form action="{{ route('guru.editStudent', $student->id) }}" method="POST" class="d-inline">
-                            @csrf
-                            @method('PUT')
-                            <button type="submit" class="btn btn-primary btn-sm">Edit</button>
-                        </form>
+
 
                         <!-- Hapus Siswa -->
                         <form action="{{ route('guru.deleteStudent', $student->id) }}" method="POST" class="d-inline">

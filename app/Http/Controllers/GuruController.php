@@ -68,6 +68,24 @@ class GuruController extends Controller
         return redirect()->route('guru.modules.index')->with('success', 'Modul berhasil ditambahkan.');
     }
 
+    // Menghapus siswa
+    public function deleteStudent($id)
+    {
+        // Cari siswa berdasarkan ID
+        $student = User::findOrFail($id);
+
+        // Pastikan siswa memiliki peran sebagai 'siswa' sebelum menghapus
+        if ($student->role === 'siswa') {
+            // Hapus siswa
+            $student->delete();
+
+            return redirect()->route('guru.dashboard')->with('success', 'Siswa berhasil dihapus.');
+        } else {
+            return redirect()->route('guru.dashboard')->with('error', 'Siswa tidak ditemukan atau bukan peran siswa.');
+        }
+    }
+
+
     // Fungsi untuk menampilkan form edit modul dengan materi
     public function editModule($id)
     {

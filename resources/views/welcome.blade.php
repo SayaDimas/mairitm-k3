@@ -89,20 +89,20 @@
                         </div>
                         <div class="col-xl-4 col-lg-5" data-aos="fade-left">
                             <div class="featured-text text-center text-lg-left">
-                                <h4>Shoreline</h4>
-                                <p class="text-black-50 mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
+                                <h4>Ship Maintenance</h4>
+                                <p class="text-black-50 mb-0">Perawatan kapal adalah faktor utama yang menentukan keselamatan, keandalan, dan efisiensi operasional kapal di laut. Kapal yang dirawat dengan baik tidak hanya memperpanjang masa pakainya, tetapi juga mengurangi risiko kecelakaan, kerusakan, atau kegagalan operasional yang dapat menimbulkan kerugian besar, baik untuk pemilik kapal maupun untuk lingkungan.</p>
                             </div>
                         </div>
                     </div>
                     <!-- Project One Row-->
                     <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-                        <div class="col-lg-6" data-aos="fade-up"><img class="img-fluid" src="{{ asset('img/ship_maintance.png') }}" alt="..." /></div>
+                        <div class="col-lg-6" data-aos="fade-up"><img class="img-fluid" src="{{ asset('img/bocor.jpeg') }}" alt="..." /></div>
                         <div class="col-lg-6" data-aos="fade-up">
                             <div class="bg-black text-center h-100 project">
                                 <div class="d-flex h-100">
                                     <div class="project-text w-100 my-auto text-center text-lg-left">
-                                        <h4 class="text-white">Misty</h4>
-                                        <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
+                                        <h4 class="text-white">Kondisi Laut dan Cuaca</h4>
+                                        <p class="mb-0 text-white-50">Keselamatan di laut adalah serangkaian tindakan, prosedur, dan aturan yang dirancang untuk melindungi manusia, kapal, dan lingkungan laut dari bahaya yang dapat terjadi selama aktivitas pelayaran. Hal ini bertujuan untuk mencegah kecelakaan, mengurangi risiko kerugian, serta memastikan operasional yang aman bagi semua pihak yang terlibat, baik itu awak kapal, penumpang, maupun lingkungan maritim.</p>
                                     </div>
                                 </div>
                             </div>
@@ -111,14 +111,14 @@
                     <!-- Project Two Row-->
                     <div class="row gx-0 justify-content-center">
                         <div class="col-lg-6">
-                            <img class="img-fluid" src="{{ asset('img/first_aid.png') }}" alt="..." />
+                            <img class="img-fluid" src="{{ asset('img/keselamatanpertama.jpeg') }}" alt="..." />
                         </div>
                         <div class="col-lg-6 order-lg-first">
                             <div class="bg-black text-center h-100 project">
                                 <div class="d-flex h-100">
                                     <div class="project-text w-100 my-auto text-center text-lg-right">
-                                        <h4 class="text-white">Mountains</h4>
-                                        <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well!</p>
+                                        <h4 class="text-white">Pertolongan Pertama</h4>
+                                        <p class="mb-0 text-white-50">Pertolongan pertama adalah tindakan awal yang diberikan kepada seseorang yang mengalami cedera atau sakit sebelum mendapatkan perawatan medis lebih lanjut. Keberadaan pertolongan pertama yang tepat waktu dan tepat prosedur sangat penting dalam menjaga keselamatan dan kesehatan individu, terutama dalam situasi darurat atau di lokasi yang jauh dari fasilitas medis.</p>
                                     </div>
                                 </div>
                             </div>
